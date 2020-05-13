@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import {View, Text,Linking} from 'react-native';
+import {View, Text,Linking,TouchableOpacity} from 'react-native';
 
 const Download = (props) => {
     
@@ -133,13 +133,17 @@ console.log("hello pressed")
          Object.entries(changedMenu).map(([key,value],index)=> { return (!value.includes('null')) ?
              (
 
-           <View style = {styleOfMenu} onClick={ () => {
-             setValueToCheck(value)
-              setMenuIndex(index) 
-              setManageState(hello=>[...hello,value])
-            }}
-            >
+           <View style = {styleOfMenu}  >
+                <TouchableOpacity onPress={
+                    () => {
+                        setValueToCheck(value)
+                         setMenuIndex(index) 
+                         setManageState(hello=>[...hello,value])
+                       }
+                } > 
+                
              <Text key={index}>{getModifiedString(value)[0]}</Text>
+                </TouchableOpacity>
              
             </View>
              ) : null;

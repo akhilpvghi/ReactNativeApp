@@ -144,6 +144,172 @@ FirstReactNativeProject
 
 ___________________________________________________
 
+when we require data--->at which point in life cycle
+
+getting called when about to render--->
+
+componentWillMount(){
+
+debugger;
+}
+
+
+npm install --save axios
+
+axios.get('https:// ....')
+.then((res)=>{console.log(res)})
+
+
+
+axios--->asynch--->no idea of time--->state is a solution
+
+style={
+
+borderWidth: 1,
+borderRadius: 2,
+borderColor: '#ddd',
+borderBottomWidth: 0,
+shadowColor: '#000',
+shadowOffset:{width:0, height:2},
+shadowOpacity: 0.1,
+shadowRadius: 2,
+elevation: 1.
+marginLeft: 5,
+marginRight:5,
+marginTop: 10
+
+
+
+}
+
+
+______________________________
+important
+
+<card> <text></text></card> then
+
+in card
+
+receive it as 
+{props.children}
+
+______________________
+
+default  style in react-native
+
+
+left to right
+top to bottom
+
+
+justifyContent: 'centre | flex-end |flex-start| space-between | space-around'---->works vertically
+
+flexDirection: 'row'
+
+_______________________________________
+<Image source={{uri: ''}} style={{}} />
+___________________________________________
+destructuring looks nice
+
+
+______________________________________________
+
+scrollable---->
+
+{ScrollView} from 'react-native';
+
+<ScrollView></ScrollView>------->but bounces back to top
+
+flex should be 1 in parent tag---to remove bug of bouncing back
+
+fonSize: 18 
+
+________________________________________________________
+
+ TouchableOpacity
+TouchableHighlight
+-------------------------->with react-native search on site
+react native/docs/getting started/
+
+import from react-native
+<TouchableOpacity onPress={} > </TouchableOpacity>
+
+
+____________________________________
+
+flex : 1--->means we want it expandable whenever we want
+alignSelf: 'stretch',
+
+
+style for text on button---->
+
+textstyle:{
+alignSelf:'center',
+color: '',
+fontSize: 16,
+fontWeight:'600',
+paddingTop: 10,
+paddingBottom: 10
+}
+
+
+________________________________________________
+
+onCLick or onPress
+
+onPress={()=> console.log('akhilll') }
+
+
+_______________________________________________
+
+fn can also be passed as props
+
+________________________________________
+
+in API doct of react native go to LINK library
+
+{Linking } from 'react-native'
+
+Linking.openURL('url')
+
+_______________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
