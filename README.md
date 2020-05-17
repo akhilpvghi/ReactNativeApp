@@ -125,8 +125,39 @@ expo init firstReactNative
 
 expo start
 
-You will need to run expo build:status. When building process is complete you will see link to download apk (Android) or ipa(IOS) file.
+https://www.resizepictures.net/icon-generator
 
+
+Configure app.json--------------->to create apk-------->https://docs.expo.io/distribution/building-standalone-apps/
+
+
+{
+   "expo": {
+    "name": "Your App Name",
+    "icon": "./path/to/your/app-icon.png",
+    "version": "1.0.0",
+    "slug": "your-app-slug",
+    "ios": {
+      "bundleIdentifier": "com.yourcompany.yourappname",
+      "buildNumber": "1.0.0"
+    },
+    "android": {
+      "package": "com.yourcompany.yourappname",
+      "versionCode": 1
+    }
+   }
+ }
+
+
+expo build:android
+
+type apk and then press enter 
+
+
+You will need to run expo build:status . When building process is complete you will see link to download apk (Android) or ipa(IOS) file.
+
+
+If you choose the first option and later decide to upload your own keystore, we currently offer an option to clear your current Android keystore from our build servers by running expo build:android --clear-credentials. 
 
 err----->sdk 36.0.0 in app--------->reinstall expo
 
@@ -273,6 +304,117 @@ in API doct of react native go to LINK library
 Linking.openURL('url')
 
 _______________________________________________
+
+      
+
+react-native init auth
+
+react-native run android
+
+import {Header, card} from 'collection';
+
+---->collection will have index.js file
+
+in index.js 
+
+export * from './Button';
+export * from './Card';
+.
+.
+.
+export * from './CardSection';
+
+and now component can not be exported default instead
+
+export { Button };
+
+_____________________________________________________
+
+FIREBASE
+
+firebase--->
+
+firebase.google.com    ----->go to console---->
+
+create new project----------->add firebase to your webappp----->
+
+auth---->set up sign in method--------->
+
+email and password----->enable----> 
+
+
+npm istall --save firebase ====>to install firebase in our application
+
+
+-----------------------
+to setup firebsae auth....
+
+go to web setup
+
+copy config={} from fire baseto store data base
+
+
+import firebase from 'firebase';
+
+componentWillMount(){
+firebase.initialiseApp({config from firebase})
+}
+
+_____________________________________________________________
+
+import { TextInput } from 'react-native';
+
+
+<TextInput
+value={this.state.text}
+onChangeText={text=> this.state{text}} ///means key value same
+ style={{height : 20, width : 120}}/> 
+
+
+_________________________________________________
+
+lineHeight:23,
+
+flex is like col in bootstrap
+
+
+<TextInput autoCorrect={false}  
+placeholder={placeholder} or placholder="anything"
+>--->in ios auto correct fn is there
+
+______________________________
+
+<TextInput secureTextEntry={true}>====>like type = password
+
+---->by default --->undefined , which is false
+
+______________________________________________
+<Button onPress={}>
+
+import firebase from 'firebase';
+
+onButtonPress=()=>{
+
+firebase.auth().signInWithEmailAndPassword(email,passwd)
+.catch(()=>{
+  firebase.auth().createUserWithEmailAndPassword(email,passwd)
+  .catch(()=>{
+	this.setState({error: "Sign upFail"})
+
+})
+
+});
+}
+___________________________________________________________________________________________________________________________________
+
+ ______________________________________________________
+            predefined styling
+            https://www.tutorialspoint.com/react_native/react_native_text_input.htm
+
+
+
+	
+
 
 
 
